@@ -39,6 +39,7 @@ class Dancer {
     this.$node = $('<span class="dancer"></span>');
   }
   step() {
+    this.step();
     setTimeout(this.step, this.timeBetweenSteps);
   }
   setPosition() {
