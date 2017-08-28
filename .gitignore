@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 ### Mac attack##
 .DS_store
+=======
+### Mac ###
+.DS_Store
+
+>>>>>>> 21016eeb7b462229ce142ec178167af9432aea99
 ### node etc ###
 
 # Logs
