@@ -1,7 +1,7 @@
 describe('blinkyDancer', function() {
 
   var blinkyDancer, clock;
-  var timeBetweenSteps = 100;
+  var timeBetweenSteps = 1000;
 
   beforeEach(function() {
     clock = sinon.useFakeTimers();
@@ -16,6 +16,7 @@ describe('blinkyDancer', function() {
     debugger;
     sinon.spy(blinkyDancer.$node, 'toggle');
     blinkyDancer.step();
+    debugger;
     expect(blinkyDancer.$node.toggle.called).to.be.true;
   });
 
