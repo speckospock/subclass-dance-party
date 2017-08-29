@@ -9,8 +9,8 @@ class RainbowDancer extends Dancer {
   //returns a random valid color
   pickColor() {
     var colors = [
-      "red", "blue", "green", "yellow", "aqua", "pink", "blue", "blueviolet",
-      "coral", "chartreuse",
+      'red', 'blue', 'green', 'yellow', 'aqua', 'pink', 'blue', 'blueviolet',
+      'coral', 'chartreuse',
     ];
     return colors[Math.floor(Math.random() * colors.length)];
   }
@@ -19,8 +19,8 @@ class RainbowDancer extends Dancer {
     var dancer = this;
 
     //We set the left and top properties to random points within the screen
-    this.left = (Math.random() * $("body").width());
-    this.top = (($("body").height()-32) * Math.random())+32;
+    this.left = (Math.random() * $('body').width());
+    this.top = (($('body').height()-32) * Math.random())+32;
 
     //We create an object to set the css properties with
     var styleSettings = {
