@@ -10,7 +10,7 @@ body{
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton, .addRainbowDancer, .addSizeDancer{
+.title, .addDancerButton, .addRainbowDancer, .addSizeDancer, .lineUpButton, .goNutsButton{
   padding:5px 12px;
   float:right;
 }

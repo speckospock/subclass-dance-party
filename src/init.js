@@ -52,4 +52,16 @@ $(document).ready(function() {
     //append the dancer to the body
     $('body').append(sized.$node);
   });
+  $('.lineUpButton').click(() => {
+    window.dancers.forEach((dancer) => {
+      dancer.linedUp = true;
+      dancer.lineUp();
+    });
+  });
+  $('.goNutsButton').click(() => {
+    window.dancers.forEach((dancer) => {
+      dancer.linedUp = false;
+      dancer.step();
+    });
+  });
 });

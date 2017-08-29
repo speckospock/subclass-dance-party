@@ -23,7 +23,6 @@ describe('rainbowDancer', () => {
       expect(rainbowDancer.step.callCount).to.be.equal(0);
       clock.tick(timeBetweenSteps);
       expect(rainbowDancer.step.callCount).to.be.equal(1);
-
       clock.tick(timeBetweenSteps);
       expect(rainbowDancer.step.callCount).to.be.equal(2);
     });

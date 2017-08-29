@@ -5,6 +5,7 @@ class RainbowDancer extends Dancer {
     this.$node = $('<span class="dancer rainbow"></span>');
     this.setPosition();
     this.step();
+    this.linedUp = false;
   }
   //returns a random valid color
   pickColor() {
@@ -15,24 +16,37 @@ class RainbowDancer extends Dancer {
     return colors[Math.floor(Math.random() * colors.length)];
   }
   step() {
-    //We bind 'this', to make setTimeout function correctly.
-    var dancer = this;
+    if (!this.linedUp) {
+      //We bind 'this', to make setTimeout function correctly.
+      var dancer = this;
 
-    //We set the left and top properties to random points within the screen
-    this.left = (Math.random() * $('body').width());
-    this.top = (($('body').height() - 32) * Math.random()) + 32;
+      //We set the left and top properties to random points within the screen
+      this.left = (Math.random() * $('body').width());
+      this.top = (($('body').height() - 32) * Math.random()) + 32;
 
-    //We create an object to set the css properties with
-    var styleSettings = {
-      left: this.left,
-      top: this.top,
-    };
+      //We create an object to set the css properties with
+      var styleSettings = {
+        left: this.left,
+        top: this.top,
+      };
 
-    //We create an animation which moves the node to the new position and changes color
-    this.$node.animate(styleSettings, 200).css('color', this.pickColor());
+      //We create an animation which moves the node to the new position and changes color
+      this.$node.animate(styleSettings, 200).css('color', this.pickColor());
+    }
 
     setTimeout(() => {
       dancer.step();
     }, this.timeBetweenSteps);
+  }
+  lineUp() {
+    if (this.linedUp) {
+      this.top = 60;
+      this.setPosition();
+      var dancer = this;
+
+      setInterval(() => {
+        dancer.$node.css('color', dancer.pickColor());
+      });
+    }
   }
 }
