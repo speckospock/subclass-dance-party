@@ -4,7 +4,7 @@ $(document).ready(function() {
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
-     * As long as the "data-dancer-maker-function-name" attribute of a
+     * As long as the 'data-dancer-maker-function-name" attribute of a
      * class="addDancerButton" DOM node matches one of the names of the
      * maker functions available in the global scope, clicking that node
      * will call the function to make the dancer.
@@ -24,8 +24,8 @@ $(document).ready(function() {
 
 
     var dancer = new BlinkyDancer(
-      (($("body").height()-32) * Math.random())+32, //top
-      $("body").width() * Math.random(), //left
+      (($('body').height() - 32) * Math.random()) + 32, //top
+      $('body').width() * Math.random(), //left
       Math.random() * 1000 //timeBetweenSteps
     );
     window.dancers.push(dancer);
@@ -33,8 +33,8 @@ $(document).ready(function() {
   });
   $('.addRainbowDancer').click(() => {
     var dancer = new RainbowDancer(
-      (($("body").height()-32) * Math.random())+32, //top
-      $("body").width() * Math.random(), //left
+      (($('body').height() - 32) * Math.random()) + 32, //top
+      $('body').width() * Math.random(), //left
       Math.random() * 1000 //timeBetweenSteps
     );
     window.dancers.push(dancer);
@@ -43,8 +43,8 @@ $(document).ready(function() {
   $('.addSizeDancer').click(() => {
     //instantiate a new sizeDancer
     var sized = new SizeDancer(
-      $("body").height() * Math.random(), //top
-      $("body").width() * Math.random(), //left
+      $('body').height() * Math.random(), //top
+      $('body').width() * Math.random(), //left
       Math.random() * 200//timeBetweenSteps
     );
     //push the dancer to dancers array
