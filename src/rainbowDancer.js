@@ -1,3 +1,4 @@
+
 class RainbowDancer extends Dancer {
   constructor(top, left, timeBetweenSteps, step, $node) {
     super(top, left, timeBetweenSteps, step, $node);

@@ -31,6 +31,7 @@
 //   return dancer; //returns the dancer
 // };
 
+
 class Dancer {
   constructor(top, left, timeBetweenSteps) {
     this.top = top;
