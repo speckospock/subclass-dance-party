@@ -1,4 +1,3 @@
-
 // var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
 //   var blinkyDancer = makeDancer(top, left, timeBetweenSteps);
 //
@@ -35,17 +34,10 @@ class BlinkyDancer extends Dancer {
     //var toggled = this.$node.toggle.bind(this.$node);
     var stepUp = this.step.bind(this);
     var leftPos = this.left;
-    var colors = ["red", "blue", "green", "yellow"];
     //debugger;
     setInterval(() => {
-      var styleSettings = {
-        left: (Math.random() * $("body").height()),
-        top: (Math.random() * $("body").width()),
-      };
-      dancerNode.animate(styleSettings, 200);
       dancerNode.toggle();
       stepUp;
     }, this.timeBetweenSteps);
   }
-
 }

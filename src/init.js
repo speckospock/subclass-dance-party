@@ -31,4 +31,13 @@ $(document).ready(function() {
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
   });
+  $('.addRainbowDancer').click(() => {
+    var dancer = new RainbowDancer(
+      $("body").height() * Math.random(), //top
+      $("body").width() * Math.random(), //left
+      Math.random() * 1000 //timeBetweenSteps
+    );
+    window.dancers.push(dancer);
+    $('body').append(dancer.$node);
+  });
 });
