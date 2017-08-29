@@ -5,7 +5,6 @@ class RainbowDancer extends Dancer {
     this.$node = $('<span class="dancer rainbow"></span>');
     this.setPosition();
     this.step();
-    this.linedUp = false;
   }
   //returns a random valid color
   pickColor() {

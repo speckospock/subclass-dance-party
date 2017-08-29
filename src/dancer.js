@@ -38,6 +38,7 @@ class Dancer {
     this.left = left;
     this.timeBetweenSteps = timeBetweenSteps;
     this.$node = $('<span class="dancer"></span>');
+    this.linedUp = false;
   }
   step() {
     //take this dancer, find this dancer's step method, bind it to the dancer object

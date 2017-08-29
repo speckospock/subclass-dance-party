@@ -30,15 +30,24 @@ class BlinkyDancer extends Dancer {
     this.step();
   }
   step() {
-    var dancerNode = this.$node;
-    dancerNode.toggle();
-    //var toggled = this.$node.toggle.bind(this.$node);
-    var dancer = this;
-    var leftPos = this.left;
-    //debugger;
-    setTimeout(() => {
-      //dancerNode.toggle();
-      dancer.step();
-    }, this.timeBetweenSteps);
+    if (!this.linedUp) {
+      var dancerNode = this.$node;
+      this.setPosition();
+      dancerNode.toggle();
+      //var toggled = this.$node.toggle.bind(this.$node);
+      var dancer = this;
+      var leftPos = this.left;
+      //debugger;
+      setTimeout(() => {
+        //dancerNode.toggle();
+        dancer.step();
+      }, this.timeBetweenSteps);
+    }
+  }
+  lineUp() {
+    this.$node.show();
+    this.left = 20;
+    this.setPosition();
+    this.left = $('body').width() * Math.random();
   }
 }

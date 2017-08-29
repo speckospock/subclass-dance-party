@@ -43,9 +43,9 @@ $(document).ready(function() {
   $('.addSizeDancer').click(() => {
     //instantiate a new sizeDancer
     var sized = new SizeDancer(
-      $('body').height() * Math.random(), //top
+      (($('body').height() - 32) * Math.random()) + 32, //top
       $('body').width() * Math.random(), //left
-      Math.random() * 200//timeBetweenSteps
+      Math.random() * 400//timeBetweenSteps
     );
     //push the dancer to dancers array
     window.dancers.push(sized);
@@ -62,7 +62,7 @@ $(document).ready(function() {
     }
     */
     window.dancers.forEach((dancer) => {
-      dancer.$node.stop();
+      dancer.$node.clearQueue().stop();
       dancer.linedUp = true;
       dancer.lineUp();
     });
@@ -72,5 +72,26 @@ $(document).ready(function() {
       dancerr.linedUp = false;
       dancerr.step();
     });
+  });
+  $('.dogpileButton').click(() => {
+    if(window.dancers.length) {
+      var target = window.dancers[ Math.floor(Math.random() * window.dancers.length) ];
+      var targetPos = {
+        top: target.top,
+        left: target.left,
+      };
+
+      window.dancers.forEach((dancer) => {
+        dancer.$node.clearQueue().stop();
+        dancer.$node.show();
+        dancer.linedUp = true;
+        dancer.$node.animate(targetPos, 500);
+        setTimeout(() => {
+          dancer.linedUp = false;
+          dancer.step();
+        }, 500);
+        //dancer.linedUp = false;
+      });
+    }
   });
 });
