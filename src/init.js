@@ -40,4 +40,16 @@ $(document).ready(function() {
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
   });
+  $('.addSizeDancer').click(() => {
+    //instantiate a new sizeDancer
+    var sized = new SizeDancer(
+      $("body").height() * Math.random(), //top
+      $("body").width() * Math.random(), //left
+      Math.random() * 200//timeBetweenSteps
+    );
+    //push the dancer to dancers array
+    window.dancers.push(sized);
+    //append the dancer to the body
+    $('body').append(sized.$node);
+  });
 });

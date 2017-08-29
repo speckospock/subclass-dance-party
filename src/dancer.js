@@ -39,15 +39,18 @@ class Dancer {
     this.$node = $('<span class="dancer"></span>');
   }
   step() {
+    //take this dancer, find this dancer's step method, bind it to the dancer object
+    //so that when you call stepUp, 'this' always refers to the dancer object
     var stepUp = this.step.bind(this);
     setInterval(() => {
       stepUp;
     }, this.timeBetweenSteps);
   }
   setPosition() {
+    //styleSettings is a css style object
     var styleSettings = {
-      top: this.top,
-      left: this.left
+      top: this.top, //this refers to the dancer object
+      left: this.left //this also refers to the dancer object
     };
     this.$node.css(styleSettings);
   }

@@ -23,8 +23,9 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
 */
 
 class BlinkyDancer extends Dancer {
-  constructor(top, left, timeBetweenSteps, step) {
-    super(top, left, timeBetweenSteps, step);
+  constructor(top, left, timeBetweenSteps, step, $node) {
+    super(top, left, timeBetweenSteps, step, $node);
+    this.$node = $('<span class="dancer blinky"></span>');
     this.setPosition();
     this.step();
   }
