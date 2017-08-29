@@ -3,7 +3,8 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image:url('http://cdn.playbuzz.com/cdn/37b9762a-43a1-4ee6-a79b-aed4e2279c14/b01e4c86-2e66-4217-8740-5907ead01fd6.jpg');
+  background-size: contain;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
