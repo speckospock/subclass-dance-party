@@ -24,7 +24,7 @@ $(document).ready(function() {
 
 
     var dancer = new BlinkyDancer(
-      $("body").height() * Math.random(), //top
+      (($("body").height()-32) * Math.random())+32, //top
       $("body").width() * Math.random(), //left
       Math.random() * 1000 //timeBetweenSteps
     );
@@ -33,7 +33,7 @@ $(document).ready(function() {
   });
   $('.addRainbowDancer').click(() => {
     var dancer = new RainbowDancer(
-      $("body").height() * Math.random(), //top
+      (($("body").height()-32) * Math.random())+32, //top
       $("body").width() * Math.random(), //left
       Math.random() * 1000 //timeBetweenSteps
     );

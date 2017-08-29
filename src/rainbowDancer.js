@@ -18,7 +18,7 @@ class RainbowDancer extends Dancer {
       //stepUp;
       var styleSettings = {
         left: (Math.random() * $("body").width()),
-        top: (Math.random() * $("body").height()),
+        top: (($("body").height()-32) * Math.random())+32,
       };
       var colors = ["red", "blue", "green", "yellow", "aqua", "pink"];
       var color = Math.floor(Math.random() * colors.length);
