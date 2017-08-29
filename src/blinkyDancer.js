@@ -24,16 +24,21 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
 */
 
 class BlinkyDancer extends Dancer {
-  constructor(top, left, timeBetweenSteps) {
-    super(top, left, timeBetweenSteps);
+  constructor(top, left, timeBetweenSteps, step) {
+    super(top, left, timeBetweenSteps, step);
     this.setPosition();
+    this.step();
   }
   step() {
-    this.$node.toggle();
+    var dancerNode = this.$node;
+    dancerNode.toggle();
+    //var toggled = this.$node.toggle.bind(this.$node);
     var stepUp = this.step.bind(this);
-    debugger;
+    //debugger;
     setInterval(() => {
+      dancerNode.toggle();
       stepUp;
+      console.log('stepped');
     }, this.timeBetweenSteps);
   }
 
