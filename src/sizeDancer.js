@@ -4,6 +4,11 @@ class SizeDancer extends Dancer {
     //We create a span tag with jQuery with class dancer and class sizeDancer
     //This way, we can inherit dancer styles and change sizeDancer styles
     this.$node = $('<span class="dancer sizeDancer"></span>');
+    this.$node.hover(() => {
+      this.$node.css('color', 'green');
+    }, () => {
+      this.$node.css('color', 'blue');
+    });
     this.setPosition();
     this.step();
     this.oddStep = true;

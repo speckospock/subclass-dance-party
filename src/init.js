@@ -53,14 +53,6 @@ $(document).ready(function() {
     $('body').append(sized.$node);
   });
   $('.lineUpButton').click(() => {
-    /*
-    for (let i = 0; i< window.dancers.length; i++){
-      console.log(window.dancers[i].top, window.dancers[i].left)
-      //window.dancers[i].$node.stop();
-      window.dancers[i].linedUp = true;
-      window.dancers[i].lineUp();
-    }
-    */
     window.dancers.forEach((dancer) => {
       dancer.$node.clearQueue().stop();
       dancer.linedUp = true;
@@ -74,7 +66,7 @@ $(document).ready(function() {
     });
   });
   $('.dogpileButton').click(() => {
-    if(window.dancers.length) {
+    if (window.dancers.length) {
       var target = window.dancers[ Math.floor(Math.random() * window.dancers.length) ];
       var targetPos = {
         top: target.top,
@@ -93,5 +85,10 @@ $(document).ready(function() {
         //dancer.linedUp = false;
       });
     }
+  });
+  $('.blinky').hover(() => {
+    console.log('hi');
+    $( 'this' ).clearQueue().stop();
+    $( this ).css('transform', 'rotate(360deg)');
   });
 });
