@@ -32,7 +32,7 @@ class SizeDancer extends Dancer {
         dancerNode.height('25px');
       }
       //console.log(dancerNode.oddStep);
-      dancerNode.oddStep = !dancerNode.oddStep
+      dancerNode.oddStep = !dancerNode.oddStep;
       //dancerNode.css('border', '50px');
     }, this.timeBetweenSteps);
   }
