@@ -53,15 +53,24 @@ $(document).ready(function() {
     $('body').append(sized.$node);
   });
   $('.lineUpButton').click(() => {
+    /*
+    for (let i = 0; i< window.dancers.length; i++){
+      console.log(window.dancers[i].top, window.dancers[i].left)
+      //window.dancers[i].$node.stop();
+      window.dancers[i].linedUp = true;
+      window.dancers[i].lineUp();
+    }
+    */
     window.dancers.forEach((dancer) => {
+      dancer.$node.stop();
       dancer.linedUp = true;
       dancer.lineUp();
     });
   });
   $('.goNutsButton').click(() => {
-    window.dancers.forEach((dancer) => {
-      dancer.linedUp = false;
-      dancer.step();
+    window.dancers.forEach((dancerr) => {
+      dancerr.linedUp = false;
+      dancerr.step();
     });
   });
 });

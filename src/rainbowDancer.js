@@ -32,21 +32,14 @@ class RainbowDancer extends Dancer {
 
       //We create an animation which moves the node to the new position and changes color
       this.$node.animate(styleSettings, 200).css('color', this.pickColor());
-    }
 
-    setTimeout(() => {
-      dancer.step();
-    }, this.timeBetweenSteps);
+      setTimeout(() => {
+        dancer.step();
+      }, dancer.timeBetweenSteps);
+    }
   }
   lineUp() {
-    if (this.linedUp) {
-      this.top = 60;
-      this.setPosition();
-      var dancer = this;
-
-      setInterval(() => {
-        dancer.$node.css('color', dancer.pickColor());
-      });
-    }
+    this.top = 60;
+    this.setPosition();
   }
 }
