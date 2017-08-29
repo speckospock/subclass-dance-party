@@ -11,29 +11,29 @@ class SizeDancer extends Dancer {
 
   step() {
     //We want to create a a variable to remember current 'this'
-    var dancerNode = this.$node;
+    var dancer = this;
     //We want a css object with border and border-radius properties
     var styleSettings = {
       'border': '30px solid', //we want this to be randomly sized
       'border-radius': '30px',
     };
+    if (this.oddStep) {
+      var randomSize = Math.floor(Math.random() * 75);
+      var pixels = randomSize + 'px';
+      this.$node.width(pixels);
+      this.$node.height(pixels);
+    } else {
+      this.$node.width('25px');
+      this.$node.height('25px');
+    }
+    this.oddStep = !this.oddStep;
     //We want to apply these styles to the $node.
-    setInterval(() => {
+    setTimeout(() => {
       //take the styleSettings and animate them
       //dancerNode.animate(styleSettings, 400);
       //dancerNode.css('border': '30px');
-      if (dancerNode.oddStep) {
-        var randomSize = Math.floor(Math.random() * 75);
-        var pixels = randomSize + 'px';
-        dancerNode.width(pixels);
-        dancerNode.height(pixels);
-      } else {
-        dancerNode.width('25px');
-        dancerNode.height('25px');
-      }
-      //console.log(dancerNode.oddStep);
-      dancerNode.oddStep = !dancerNode.oddStep;
-      //dancerNode.css('border', '50px');
+      dancer.step();
+      //this.css('border', '50px');
     }, this.timeBetweenSteps);
   }
 }

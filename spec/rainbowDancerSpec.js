@@ -18,6 +18,15 @@ describe('rainbowDancer', () => {
   });
 
   describe('dance', function() {
+    it('should call step at least once per second', function() {
+      sinon.spy(rainbowDancer, 'step');
+      expect(rainbowDancer.step.callCount).to.be.equal(0);
+      clock.tick(timeBetweenSteps);
+      expect(rainbowDancer.step.callCount).to.be.equal(1);
+
+      clock.tick(timeBetweenSteps);
+      expect(rainbowDancer.step.callCount).to.be.equal(2);
+    });
     it('should move to a random position on screen every step', () => {
       var originalLeft = rainbowDancer.left + 'px';
       var originalTop = rainbowDancer.top + 'px';

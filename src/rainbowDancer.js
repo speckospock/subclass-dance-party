@@ -20,7 +20,7 @@ class RainbowDancer extends Dancer {
 
     //We set the left and top properties to random points within the screen
     this.left = (Math.random() * $('body').width());
-    this.top = (($('body').height()-32) * Math.random())+32;
+    this.top = (($('body').height() - 32) * Math.random()) + 32;
 
     //We create an object to set the css properties with
     var styleSettings = {
