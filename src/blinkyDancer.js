@@ -33,12 +33,12 @@ class BlinkyDancer extends Dancer {
     var dancerNode = this.$node;
     dancerNode.toggle();
     //var toggled = this.$node.toggle.bind(this.$node);
-    var stepUp = this.step.bind(this);
+    var dancer = this;
     var leftPos = this.left;
     //debugger;
-    setInterval(() => {
-      dancerNode.toggle();
-      stepUp;
+    setTimeout(() => {
+      //dancerNode.toggle();
+      dancer.step();
     }, this.timeBetweenSteps);
   }
 }
