@@ -36,8 +36,8 @@ body, a:link, a:visited, a:active{
 }
 
 .dancer.blinky{
-  border: 80px solid;
-  border-radius: 65px;
+  border: 2px solid;
+  border-radius: 50%;
   color: orange;
 }
 

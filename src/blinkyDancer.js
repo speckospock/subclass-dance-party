@@ -25,7 +25,7 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
 class BlinkyDancer extends Dancer {
   constructor(top, left, timeBetweenSteps, step, $node) {
     super(top, left, timeBetweenSteps, step, $node);
-    this.$node = $('<span class="dancer blinky"></span>');
+    this.$node = $('<img src = "https://manyworldstheory.files.wordpress.com/2013/08/blinky.jpg" class="dancer blinky">');
     this.setPosition();
     this.step();
   }
