@@ -5,9 +5,12 @@ class SizeDancer extends Dancer {
     //This way, we can inherit dancer styles and change sizeDancer styles
     this.$node = $('<span class="dancer sizeDancer"></span>');
     this.$node.hover(() => {
+      this.linedUp = true;
       this.$node.css('color', 'green');
     }, () => {
+      this.linedUp = false;
       this.$node.css('color', 'blue');
+      this.step();
     });
     this.setPosition();
     this.step();
@@ -24,6 +27,7 @@ class SizeDancer extends Dancer {
         'border': '30px solid', //we want this to be randomly sized
         'border-radius': '30px',
       };
+      //We toggle between a random size and a standard size every other step
       if (this.oddStep) {
         var randomSize = Math.floor(Math.random() * 75);
         var pixels = randomSize + 'px';

@@ -86,9 +86,4 @@ $(document).ready(function() {
       });
     }
   });
-  $('.blinky').hover(() => {
-    console.log('hi');
-    $( 'this' ).clearQueue().stop();
-    $( this ).css('transform', 'rotate(360deg)');
-  });
 });
