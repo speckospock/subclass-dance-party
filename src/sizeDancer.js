@@ -6,7 +6,7 @@ class SizeDancer extends Dancer {
     this.$node = $('<span class="dancer sizeDancer"></span>');
     this.$node.hover(() => {
       this.linedUp = true;
-      this.$node.css('color', 'green');
+      this.$node.css('color', 'red');
     }, () => {
       this.linedUp = false;
       this.$node.css('color', 'blue');
@@ -51,6 +51,6 @@ class SizeDancer extends Dancer {
   lineUp() {
     this.top = $('body').height() - 250;
     this.setPosition();
-    this.top = (($('body').height() - 32) * Math.random()) + 32;
+    this.top = (($('body').height() - 100) * Math.random()) + 32;
   }
 }

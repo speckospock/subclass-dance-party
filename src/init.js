@@ -72,6 +72,8 @@ $(document).ready(function() {
         top: target.top,
         left: target.left,
       };
+      var targetColor = target.$node.css('color');
+      target.$node.css('color', 'red');
 
       window.dancers.forEach((dancer) => {
         dancer.$node.clearQueue().stop();
@@ -82,8 +84,18 @@ $(document).ready(function() {
           dancer.linedUp = false;
           dancer.step();
         }, 500);
-        //dancer.linedUp = false;
       });
+      setTimeout(() => {
+        target.$node.css('color', targetColor);
+      }, 500);
+    }
+  });
+  $('.clearDancersButton').click(() => {
+    if (window.dancers.length) {
+      window.dancers.forEach((dancer) => {
+        dancer.$node.remove();
+      });
+      window.dancers = [];
     }
   });
 });
